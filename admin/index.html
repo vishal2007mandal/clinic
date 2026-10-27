@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Puja Clinic</title>
+    <link rel="stylesheet" href="/admin/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<!-- LOGIN VIEW -->
+<div class="login-wrap" id="loginView">
+    <form class="login-card" id="loginForm">
+        <div class="login-logo">
+            <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+        <h1>Puja Clinic Admin</h1>
+        <p>Sign in to manage appointments</p>
+
+        <label for="username">Username</label>
+        <input type="text" id="username" required autocomplete="username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" required autocomplete="current-password">
+
+        <button type="submit" class="btn">Sign In</button>
+        <p id="loginError" class="login-error" role="alert"></p>
+    </form>
+</div>
+
+<!-- DASHBOARD VIEW -->
+<div class="dashboard hidden" id="dashboardView">
+    <header class="admin-header">
+        <div class="admin-header-inner">
+            <div class="admin-brand">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <div>
+                    <strong>Puja Clinic</strong>
+                    <small>Admin Dashboard</small>
+                </div>
+            </div>
+            <div class="admin-actions">
+                <button class="icon-btn" id="refreshBtn" title="Refresh">
+                    <i class="fa-solid fa-rotate"></i>
+                </button>
+                <button class="icon-btn logout" id="logoutBtn" title="Logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="admin-main">
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Total</span>
+                <span class="stat-value" id="statTotal">0</span>
+            </div>
+            <div class="stat-card pending">
+                <span class="stat-label">Pending</span>
+                <span class="stat-value" id="statPending">0</span>
+            </div>
+            <div class="stat-card completed">
+                <span class="stat-label">Completed</span>
+                <span class="stat-value" id="statCompleted">0</span>
+            </div>
+            <div class="stat-card cancelled">
+                <span class="stat-label">Cancelled</span>
+                <span class="stat-value" id="statCancelled">0</span>
+            </div>
+            <div class="stat-card today">
+                <span class="stat-label">Today</span>
+                <span class="stat-value" id="statToday">0</span>
+            </div>
+        </section>
+
+        <section class="filters">
+            <input type="text" id="searchInput"
+                   placeholder="Search name or phone...">
+            <select id="statusFilter">
+                <option value="">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </section>
+
+        <section class="table-wrap">
+            <table class="appt-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Patient</th>
+                        <th>Phone</th>
+                        <th>Service</th>
+                        <th>Visit Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="apptBody">
+                    <tr><td colspan="7" class="empty">Loading...</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+
+<script src="/admin/admin.js"></script>
+</body>
+</html>

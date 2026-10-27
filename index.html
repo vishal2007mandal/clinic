@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puja Clinic | Ranchi</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <div class="container topbar-content">
+        <span><i class="fa-solid fa-phone"></i> 9905202490</span>
+        <span
+          ><i class="fa-solid fa-location-dot"></i> Block Chowk, Ranchi,
+          Jharkhand</span
+        >
+        <span><i class="fa-regular fa-clock"></i> 9 AM – 7 PM</span>
+      </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+      <div class="container nav-content">
+        <a href="#home" class="logo">
+          <span class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></span>
+          <span>
+            <strong>Puja Clinic</strong>
+            <small>Your Health, Our Priority</small>
+          </span>
+        </a>
+
+        <nav id="navMenu">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#timings">Timings</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#appointment" class="btn nav-btn">
+          <i class="fa-regular fa-calendar-check"></i>
+          Book Appointment
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <span class="eyebrow">
+              <i class="fa-solid fa-heart"></i>
+              WELCOME TO PUJA CLINIC
+            </span>
+
+            <h1>Your Health<br />Matters <span>Most.</span></h1>
+
+            <p>
+              Welcome to Puja Clinic, located at Block Chowk, Ranchi, Jharkhand.
+              Find clinic information, contact details and appointment enquiries
+              in one place.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#appointment" class="btn">
+                <i class="fa-regular fa-calendar-check"></i>
+                Book Appointment
+              </a>
+
+              <a href="tel:+919905202490" class="btn btn-outline">
+                <i class="fa-solid fa-phone"></i>
+                Call Clinic
+              </a>
+            </div>
+
+            <div class="hero-features">
+              <div>
+                <i class="fa-solid fa-user-doctor"></i>
+                <span
+                  ><strong>Doctor</strong><small>Dr. Puja Kumari</small></span
+                >
+              </div>
+
+              <div>
+                <i class="fa-regular fa-clock"></i>
+                <span
+                  ><strong>Clinic Hours</strong><small>9 AM – 7 PM</small></span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=85"
+              alt="Doctor in a medical clinic"
+            />
+
+            <div class="image-badge">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>
+                <strong>Puja Clinic</strong>
+                <small>Block Chowk, Ranchi</small>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPOINTMENT -->
+      <section class="appointment-section" id="appointment">
+        <div class="container appointment-grid">
+          <div class="appointment-info">
+            <span class="eyebrow">APPOINTMENT ENQUIRY</span>
+            <h2>Plan Your Clinic Visit</h2>
+            <p>
+              Enter your details to prepare an appointment enquiry. The clinic
+              must confirm your appointment separately.
+            </p>
+
+            <div class="contact-detail">
+              <i class="fa-solid fa-phone"></i>
+              <div>
+                <strong>Call the Clinic</strong>
+                <p>9905202490</p>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Visit Us</strong>
+                <p>Block Chowk, Ranchi, Jharkhand</p>
+              </div>
+            </div>
+          </div>
+
+          <form class="appointment-form" id="appointmentForm">
+            <h2>Book an Appointment</h2>
+            <p class="form-note">Fill in the details below.</p>
+
+            <label for="patientName">Full Name *</label>
+            <input
+              type="text"
+              id="patientName"
+              placeholder="Enter your full name"
+              required
+            />
+
+            <label for="patientPhone">Phone Number *</label>
+            <input
+              type="tel"
+              id="patientPhone"
+              placeholder="Enter your phone number"
+              pattern="[0-9]{10}"
+              maxlength="10"
+              required
+            />
+
+            <label for="service">Reason for Visit</label>
+            <select id="service" required>
+              <option value="">Select a reason</option>
+              <option value="General Consultation">General Consultation</option>
+              <option value="Health Check-up">Health Check-up</option>
+              <option value="Follow-up Visit">Follow-up Visit</option>
+              <option value="Other Enquiry">Other Enquiry</option>
+            </select>
+
+            <label for="visitDate">Preferred Date *</label>
+            <input type="date" id="visitDate" required />
+
+            <label for="message">Additional Message (Optional)</label>
+            <textarea
+              id="message"
+              rows="3"
+              placeholder="Enter your message"
+            ></textarea>
+
+            <button type="submit" class="btn form-submit">
+              Send Enquiry <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p class="form-note">
+              Your enquiry will be sent to the clinic instantly. The clinic will
+              call you to confirm.
+            </p>
+
+            <p id="formStatus" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="container about-grid">
+          <div class="about-image">
+            <img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=850&q=85"
+              alt="Healthcare professional working in a clinic"
+            />
+          </div>
+
+          <div class="about-content">
+            <span class="eyebrow">ABOUT US</span>
+            <h2>Welcome to <span>Puja Clinic</span></h2>
+
+            <p>
+              Puja Clinic is located at Block Chowk, Ranchi, Jharkhand. Use this
+              website to find clinic contact information, opening hours and
+              appointment enquiry options.
+            </p>
+
+            <div class="about-point">
+              <i class="fa-solid fa-circle-check"></i>
+              Clinic information in one place
+            </div>
+
+            <div class="about-point">
+              <i class="fa-solid fa-circle-check"></i>
+              Easy phone contact
+            </div>
+
+            <div class="about-point">
+              <i class="fa-solid fa-circle-check"></i>
+              Appointment enquiry form
+            </div>
+
+            <a href="#contact" class="btn">
+              Contact Us <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="clinic-card">
+            <div class="clinic-detail">
+              <i class="fa-solid fa-user-doctor"></i>
+              <div>
+                <strong>Doctor</strong>
+                <p>Dr. Puja Kumari</p>
+              </div>
+            </div>
+
+            <div class="clinic-detail">
+              <i class="fa-regular fa-clock"></i>
+              <div>
+                <strong>Clinic Timings</strong>
+                <p>9:00 AM – 7:00 PM</p>
+              </div>
+            </div>
+
+            <div class="clinic-detail">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <strong>Location</strong>
+                <p>Block Chowk, Ranchi, Jharkhand</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section services-section" id="services">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">OUR SERVICES</span>
+            <h2>How Can We Help You?</h2>
+            <p>Contact the clinic to confirm available services.</p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <i class="fa-solid fa-stethoscope"></i>
+              <h3>General Consultation</h3>
+              <p>Contact the clinic to enquire about a consultation.</p>
+            </article>
+
+            <article class="service-card">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <h3>Health Enquiry</h3>
+              <p>Ask the clinic about your healthcare needs.</p>
+            </article>
+
+            <article class="service-card">
+              <i class="fa-solid fa-calendar-check"></i>
+              <h3>Appointment Enquiry</h3>
+              <p>Send your preferred date for clinic confirmation.</p>
+            </article>
+
+            <article class="service-card">
+              <i class="fa-solid fa-comments"></i>
+              <h3>Patient Information</h3>
+              <p>Contact the clinic for visit-related information.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- TIMINGS & CONTACT -->
+      <section class="section" id="timings">
+        <div class="container details-grid">
+          <div class="details-card">
+            <h2><i class="fa-regular fa-clock"></i> Clinic Timings</h2>
+
+            <div class="timing-row">
+              <span>Clinic Hours</span>
+              <strong>9:00 AM – 7:00 PM</strong>
+            </div>
+
+            <p class="small-note">
+              Please call before visiting to confirm availability.
+            </p>
+          </div>
+
+          <div class="details-card" id="contact">
+            <h2><i class="fa-solid fa-headset"></i> Get in Touch</h2>
+
+            <p class="contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+919905202490">9905202490</a>
+            </p>
+
+            <p class="contact-row">
+              <i class="fa-solid fa-location-dot"></i>
+              Block Chowk, Ranchi, Jharkhand
+            </p>
+
+            <a
+              class="btn"
+              href="https://wa.me/919905202490?text=Hello%20Puja%20Clinic"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              Message on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <a href="#home" class="logo footer-logo">
+          <span class="logo-icon"><i class="fa-solid fa-heart-pulse"></i></span>
+          <span>
+            <strong>Puja Clinic</strong>
+            <small>Your Health, Our Priority</small>
+          </span>
+        </a>
+
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#appointment">Appointment</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <p>© <span id="year"></span> Puja Clinic. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

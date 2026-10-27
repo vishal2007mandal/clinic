@@ -1,0 +1,687 @@
+/* =========================
+   1. BASIC SETTINGS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #173b3a;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
+button, input, select, textarea { font: inherit; }
+
+button, a { -webkit-tap-highlight-color: transparent; }
+
+img { display: block; width: 100%; object-fit: cover; }
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+section { scroll-margin-top: 85px; }
+
+:root {
+    --primary: #079879;
+    --primary-dark: #056b5b;
+    --dark: #103e3c;
+    --muted: #617675;
+    --light: #eaf8f4;
+    --border: #dcebe7;
+    --white: #ffffff;
+}
+
+/* =========================
+   2. TOP BAR
+========================= */
+
+.topbar {
+    background: var(--dark);
+    color: white;
+    font-size: 12px;
+    padding: 9px 0;
+}
+
+.topbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.topbar i {
+    color: #75e1c7;
+    margin-right: 7px;
+}
+
+/* =========================
+   3. NAVIGATION
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid #e8f0ed;
+    backdrop-filter: blur(10px);
+}
+
+.nav-content {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-dark);
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--light);
+    color: var(--primary);
+    font-size: 25px;
+}
+
+.logo strong,
+.logo small { display: block; }
+
+.logo strong { font-size: 22px; line-height: 1.2; }
+.logo small { font-size: 11px; color: var(--muted); }
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+nav a {
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+
+nav a:hover,
+.footer-links a:hover { color: var(--primary); }
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline { color: var(--primary-dark); background: white; }
+.btn-outline:hover { color: white; }
+
+.menu-btn {
+    display: none;
+    border: 0;
+    background: var(--light);
+    color: var(--dark);
+    border-radius: 8px;
+    padding: 10px 13px;
+    cursor: pointer;
+}
+
+/* =========================
+   4. HERO
+========================= */
+
+.hero {
+    background:
+        radial-gradient(circle at 80% 20%, #d2f4e8, transparent 35%),
+        linear-gradient(115deg, #effbf7, #e4f5f4);
+    padding: 65px 0 55px;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--primary-dark);
+    background: #d9f3ea;
+    padding: 7px 13px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.hero h1 span,
+.about-content h2 span { color: var(--primary); }
+
+.hero-text > p {
+    max-width: 520px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 34px;
+}
+
+.hero-features > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-features > div > i {
+    color: var(--primary);
+    font-size: 23px;
+    background: white;
+    padding: 11px;
+    border-radius: 50%;
+    box-shadow: 0 4px 14px #103e3c0b;
+}
+
+.hero-features strong,
+.hero-features small { display: block; }
+.hero-features strong { font-size: 12px; }
+.hero-features small { font-size: 11px; color: var(--muted); }
+
+.hero-image { position: relative; min-width: 0; }
+
+.hero-image > img {
+    height: 440px;
+    border-radius: 22px;
+    object-position: center 25%;
+    box-shadow: 0 18px 45px #103e3c20;
+}
+
+.image-badge {
+    position: absolute;
+    left: -25px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 13px;
+    box-shadow: 0 8px 30px #103e3c18;
+}
+
+.image-badge > i { color: var(--primary); font-size: 27px; }
+.image-badge strong,
+.image-badge small { display: block; }
+.image-badge small { color: var(--muted); font-size: 11px; }
+
+/* =========================
+   5. APPOINTMENT
+========================= */
+
+.appointment-section {
+    padding: 70px 0;
+    background: #f8fbfa;
+}
+
+.appointment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: start;
+}
+
+.appointment-info { padding-top: 30px; }
+
+.appointment-info h2,
+.section-heading h2 {
+    font-size: clamp(29px, 4vw, 39px);
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 17px;
+}
+
+.appointment-info > p {
+    color: var(--muted);
+    margin-bottom: 28px;
+    max-width: 460px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 22px;
+}
+
+.contact-detail > i {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--light);
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.contact-detail strong { font-size: 14px; }
+.contact-detail p { color: var(--muted); font-size: 13px; }
+
+.appointment-form {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 12px 38px #103e3c0c;
+}
+
+.appointment-form h2 {
+    color: var(--dark);
+    font-size: 25px;
+    margin-bottom: 4px;
+}
+
+.form-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 19px;
+}
+
+.appointment-form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 15px 0 6px;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #d9e6e2;
+    border-radius: 7px;
+    background: #fcfefd;
+    color: var(--dark);
+    outline: none;
+    font-size: 13px;
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px #07987918;
+}
+
+.appointment-form textarea { resize: vertical; }
+
+.form-submit { width: 100%; margin-top: 20px; }
+
+#formStatus {
+    color: var(--primary-dark);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* =========================
+   6. ABOUT
+========================= */
+
+.section { padding: 75px 0; }
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.15fr 0.85fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.about-image img { height: 300px; border-radius: 14px; }
+
+.about-content h2 {
+    font-size: 29px;
+    color: var(--dark);
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+
+.about-content > p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 17px;
+}
+
+.about-point { font-size: 12px; margin: 11px 0; }
+.about-point i { color: var(--primary); margin-right: 8px; }
+.about-content .btn { margin-top: 13px; }
+
+.clinic-card {
+    background: linear-gradient(145deg, #eaf8f4, #f5fcf9);
+    padding: 25px 20px;
+    border-radius: 14px;
+}
+
+.clinic-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    margin: 13px 0 24px;
+}
+
+.clinic-detail:last-child { margin-bottom: 5px; }
+
+.clinic-detail > i {
+    color: var(--primary);
+    font-size: 20px;
+    margin-top: 3px;
+}
+
+.clinic-detail strong { font-size: 12px; }
+.clinic-detail p { color: var(--muted); font-size: 12px; }
+
+/* =========================
+   7. SERVICES
+========================= */
+
+.services-section { background: #f5faf8; }
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading .eyebrow { margin-bottom: 12px; }
+.section-heading p { color: var(--muted); font-size: 14px; }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.service-card {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border: 1px solid #e7f0ed;
+    border-radius: 13px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px #103e3c10;
+}
+
+.service-card > i {
+    display: inline-grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    color: var(--primary);
+    background: var(--light);
+    border-radius: 15px;
+    font-size: 25px;
+    margin-bottom: 17px;
+}
+
+.service-card h3 { font-size: 15px; margin-bottom: 10px; }
+.service-card p { color: var(--muted); font-size: 12px; }
+
+/* =========================
+   8. TIMINGS & CONTACT
+========================= */
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.details-card {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: white;
+}
+
+.details-card h2 {
+    color: var(--dark);
+    font-size: 21px;
+    margin-bottom: 24px;
+}
+
+.details-card h2 i {
+    color: var(--primary);
+    margin-right: 8px;
+}
+
+.timing-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9f0ed;
+    font-size: 13px;
+}
+
+.timing-row strong { text-align: right; }
+
+.small-note {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 16px 0;
+    font-size: 13px;
+}
+
+.contact-row i { color: var(--primary); margin-top: 4px; }
+
+/* =========================
+   9. FOOTER
+========================= */
+
+.footer {
+    background: #103e3c;
+    color: white;
+    padding: 35px 0 22px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-logo { color: white; }
+
+.footer-logo .logo-icon {
+    background: #ffffff17;
+    color: #72dfc5;
+}
+
+.footer-logo small { color: #c0dcd5; }
+
+.footer-links { display: flex; gap: 17px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; }
+
+.footer-content > p {
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff20;
+    color: #c0dcd5;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* =========================
+   10. TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+    .nav-content { gap: 14px; }
+    nav { gap: 13px; }
+    nav a { font-size: 12px; }
+    .nav-btn { padding: 10px 12px; font-size: 11px; }
+
+    .hero-grid { gap: 35px; }
+    .hero-image img { height: 380px; }
+
+    .about-grid { grid-template-columns: 1fr 1fr; }
+    .clinic-card {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    .clinic-detail { margin-bottom: 0; }
+
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =========================
+   11. MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+    .container { width: 92%; }
+
+    .topbar-content { justify-content: center; font-size: 11px; }
+    .topbar-content span:nth-child(2) { display: none; }
+
+    .nav-content { min-height: 70px; flex-wrap: wrap; }
+    .logo strong { font-size: 19px; }
+    .logo-icon { width: 39px; height: 39px; font-size: 21px; }
+
+    .nav-btn { display: none; }
+    .menu-btn {
+        display: block;
+        margin-left: auto;
+        font-size: 18px;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0 0 12px;
+    }
+
+    nav.show { display: flex; }
+
+    nav a {
+        padding: 11px 8px;
+        border-top: 1px solid #edf3f0;
+        font-size: 14px;
+    }
+
+    .hero { padding: 45px 0; }
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hero h1 { font-size: 43px; letter-spacing: -1px; }
+    .hero-text > p { font-size: 14px; }
+    .hero-features { gap: 17px; }
+    .hero-image img { height: 340px; }
+    .image-badge { left: 12px; bottom: 12px; }
+
+    .appointment-section,
+    .section { padding: 50px 0; }
+
+    .appointment-grid { grid-template-columns: 1fr; gap: 30px; }
+    .appointment-info { padding-top: 0; }
+    .appointment-form { padding: 22px; }
+
+    .about-grid { grid-template-columns: 1fr; gap: 25px; }
+    .about-image img { height: 260px; }
+    .clinic-card { grid-column: auto; display: block; }
+    .clinic-detail { margin-bottom: 22px; }
+
+    .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .service-card { padding: 22px 12px; }
+    .service-card h3 { font-size: 13px; }
+
+    .details-grid { grid-template-columns: 1fr; }
+    .details-card { padding: 22px; }
+
+    .footer-content { flex-direction: column; align-items: flex-start; }
+    .footer-content > p { text-align: left; }
+}
+
+@media (max-width: 380px) {
+    .hero h1 { font-size: 36px; }
+    .hero-buttons .btn { width: 100%; }
+    .hero-features { flex-direction: column; }
+    .services-grid { grid-template-columns: 1fr; }
+    .timing-row { flex-direction: column; }
+    .timing-row strong { text-align: left; }
+}
